@@ -98,6 +98,29 @@ is created to compare the predicted class labels with the actual class labels of
 sensitivity, positive predictive value (PPV), negative predictive value (NPV), prevalence of the positive class label, and detection rate are calculated 
 to evaluate the performance of the model. Finally, the ROC curve is plotted to visualize the performance of the binary classifier model.
 
+---
+
+### K-Nearest Neighbors (KNN) 
+
+K-Nearest Neighbors (KNN) algorithm, a popular machine learning algorithm used for classification tasks. KNN is an instance-based learning algorithm that memorizes the training dataset and works by calculating the distance between the input data point and all the other data points in the training set. It then selects the K-nearest data points based on the calculated distance, and the classification of the input data point is determined by the majority class of the K-nearest neighbors. To build the KNN models we follow the next steps. First, we check the dimensions of the training and testing datasets to ensure they are equal. Then, 
+we scale the data to ensure that all the features are given equal weight in the distance metric. Thirdly, we define a grid of K values ranging from 1 to 20 and using 10-fold cross-validation to evaluate the performance of the KNN algorithm for each value of K. Afterwards, we fit the KNN model with different values of K and tuning the hyperparameters using the train function from the caret library. Lastly, we evaluate the performance of the KNN algorithm using confusion matrix, classification accuracy, no information rate (NIR), kappa statistic, sensitivity, specificity, positive predictive value (PPV), negative predictive value (NPV), detection rate, detection prevalence, and ROC curves.
+
+According to the analysis, the results showed that the optimal number of nearest neighbors for the KNN algorithm is 5, closely followed by 4 NN. Therefore, we performed KNN classification with both scaled and unscaled datasets using 5 and 4 NN, and evaluated the performance of the KNN algorithm. To sum up, we built a total of 4 KNN models (scaled with 4 NN, unscaled with 4 NN, scaled with 5 NN, and unscaled with 5 NN) and evaluated their performance using the aforementioned metrics.
+
+---
+
+### Models Comparisons
+
+
+
+
+
+
+
+
+
+
+
 
 
 
