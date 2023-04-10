@@ -23,8 +23,7 @@ In data partitioning, we divide a dataset into two or more subsets to train and 
 
 --- 
 
-### Part I: Classification
----
+## Part I: Classification
 
 Classification is a fundamental task in machine learning, which involves assigning a label or a category
 to a given input or observation. The goal of classification is to build a model that can accurately predict
