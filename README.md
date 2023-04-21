@@ -161,8 +161,33 @@ are divided into a fixed number of clusters based on a predefined criterion, suc
 distance between the data points in the same cluster. The two most popular clustering algorithms –
 which will also be applied in the current analysis are the K-Means and the Hierarchical Clustering.
 
+---
 
 
+| Variable Code | Description |
+| --- | --- |
+| PST045214 | Population, 2014 estimate |
+| PST040210 | Population, 2010 (April 1) estimates base |
+| PST120214 | Population, percent change - April 1, 2010 to July 1, 2014 |
+| POP010210 | Population, 2010 |
+| AGE135214 | Persons under 5 years, percent, 2014 |
+| AGE295214 | Persons under 18 years, percent, 2014 |
+| AGE775214 | Persons 65 years and over, percent, 2014 |
+| SEX255214 | Female persons, percent, 2014 |
+| RHI125214 | White alone, percent, 2014 |
+| RHI225214 | Black or African American alone, percent, 2014 |
+| RHI325214 | American Indian and Alaska Native alone, percent, 2014 |
+| RHI425214 | Asian alone, percent, 2014 |
+| RHI525214 | Native Hawaiian and Other Pacific Islander alone, percent, 2014 |
+| RHI625214 | Two or More Races, percent, 2014 |
+| RHI725214 | Hispanic or Latino, percent, 2014 |
+| RHI825214 | White alone, not Hispanic or Latino, percent, 2014 |
+| POP715213 | Living in same house 1 year & over, percent, 2009-2013 |
+| POP645213 | Foreign born persons, percent, 2009-2013 |
+| POP815213 | Language other than English spoken at home, pct age 5+, 2009-2013 |
+| EDU635213 | High school graduate or higher, percent of persons age 25+, 2009-2013 |
+| EDU685213 | Bachelor's degree or higher, percent of persons age 25+, 2009-2013 |
+| VET605213 | Veterans, 2009-2013 |
 
 
 
