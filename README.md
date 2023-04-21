@@ -111,9 +111,55 @@ According to the analysis, the results showed that the optimal number of nearest
 
 ### Models Comparisons
 
+Model comparison is an important step in machine learning and involves evaluating the performance
+of different models and selecting the best one for the task at hand. To be more precise, we will
+present various measures to select the best of the aforementioned models.
 
+The given report discusses the process of comparing different machine learning models to select the best one for a particular task.
+The report first discusses the importance of checking the balance of the dataframes before proceeding with model comparisons. 
+It then suggests using multiple performance metrics like sensitivity, specificity, and precision in addition to accuracy to evaluate model performance in imbalanced data scenarios.
 
+Next, the report's procedure excludes the KNN models with four and five nearest neighbors due to poor results and suggests comparing the remaining six models - Logistic Regression,
+Decision Tree, SVM, Naïve Bayes, KNN with K=5 scaled, and KNN with K=4 scaled.
 
+Finally, the report presents a table showing statistics measures like accuracy, precision, recall/sensitivity, specificity, and F1 score for all six models. 
+It suggests that the Naïve Bayes model performs the best on the given dataset with the highest accuracy and precision scores, followed by Logistic Regression and SVM. 
+The F1 score is also discussed as a useful metric when the classes are imbalanced, as it measures the harmonic mean of precision and recall.
+
+---
+
+### Conclusion
+
+After taking all the aforementioned measures into consideration, and by excluding the Naïve Bayes
+models due to certain assumptions and limitations, such as assuming that the features are
+independent and that all features are equally important, we reach to the conclusion that the Logistic
+Regression and the SVM model are the leading two followed by the Decision Tree model. However
+since we are aiming for the best predictive model - and we do not care about the interpretations - the
+Logistic Regression model performs slightly better than the SVM and the Decision Tree models across
+to the multiple measures that were implemented above. Therefore, our final choice would be the
+**Logistic Regression** model.
+
+---
+
+## Part II: Clustering
+
+In the context of unsupervised learning, we will be exploring the use of clustering methods to extract
+valuable insights from our dataset. In contrast to supervised learning, the dataset lacks any labeled
+information, thus our objective is to discover hidden structures or groupings among the data points.
+
+Our aim is to partition the data into distinct clusters, where each cluster comprises of observations
+that exhibit similar characteristics or attributes. The clustering process is motivated by the goal of
+identifying homogeneity within clusters and heterogeneity between them, without any prior
+knowledge of the underlying labels or classes. Clustering is used in various domains such as marketing,
+image segmentation, bioinformatics, and social network analysis, among others.
+
+Clustering algorithms can be broadly categorized into two types: hierarchical clustering and
+partitioning clustering. In hierarchical clustering, the data points are recursively grouped into a treelike structure,
+known as a dendrogram, based on the similarity between them. The dendrogram is
+then pruned to obtain the final clusters. On the other hand, in partitioning clustering, the data points
+are divided into a fixed number of clusters based on a predefined criterion, such as minimizing the
+distance between the data points in the same cluster. The two most popular clustering algorithms –
+which will also be applied in the current analysis are the K-Means and the Hierarchical Clustering.
 
 
 
