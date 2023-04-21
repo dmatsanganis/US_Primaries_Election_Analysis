@@ -163,6 +163,15 @@ which will also be applied in the current analysis are the K-Means and the Hiera
 
 ---
 
+### Dataset Preparations & Adjustments
+
+The dataset is being prepared for clustering by separating variables into demographics and economic-related variables.
+Rows with missing data (states and US totals) are removed, as well as columns that are not needed for clustering. 
+The resulting CSV file is saved and output as a checkpoint.
+
+
+The variables selected for the demographics-related data frame are the following:
+
 
 | Variable Code | Description |
 | --- | --- |
@@ -189,8 +198,70 @@ which will also be applied in the current analysis are the K-Means and the Hiera
 | EDU685213 | Bachelor's degree or higher, percent of persons age 25+, 2009-2013 |
 | VET605213 | Veterans, 2009-2013 |
 
+---
 
+### Variables Selection
 
+Variable selection prior to clustering with correlation involves identifying variables that are highly
+correlated with each other and selecting a subset of variables that are not highly correlated to avoid
+redundancy and overfitting.
+
+In other words, when it comes to analyzing data, it's important to ensure that variables aren't redundant or highly correlated to avoid overfitting and to simplify the analysis. One way to do this is to calculate the correlation matrix of all variables in the dataset and identify highly correlated variables with a cut-off of 0.7 or higher. In a recent analysis of demographic variables, we found that VET605213 was highly correlated with three other variables, so we removed it to resolve the issue. 
+
+Additionally, we removed the variable POP815213 as it was common to two other pairs with relatively high correlation coefficients. We also noticed a negative correlation between RHI125214 and RHI225214 and a positive correlation between RHI125214 and RHI825214, so we removed RHI125214 due to its commonality in these pairs. 
+
+Finally, we decided to remove AGE135214, which refers to persons under 5 years old, as it appeared only once in the top correlated pairs and we deemed it less meaningful than the variable representing persons over 65 years old. By removing these variables, we were left with a subset of variables that were not highly correlated with each other, allowing for more accurate and meaningful clustering analysis.
+To sum up, we decide to remove the following variables to resolve all the correlation issues:
+
+| Variable   | Description                                                                                        |
+|------------|----------------------------------------------------------------------------------------------------|
+| AGE135214  | Percentage of population that is under 5 years old, as of 2014                                    |
+| RHI125214  | Percentage of population that is White alone, as of 2014                                          |
+| POP815213  | Percentage of population that speaks a language other than English at home, age 5 and above, 2009-2013 |
+| VET605213  | Number of veterans, 2009-2013                                                                       |
+
+---
+
+### Variables Scaling
+
+Scaling the variables is an essential step before performing clustering analysis. Clustering algorithms are based on distance calculations, and if the variables are on different scales or have different units, then some variables may dominate the distance calculation, leading to biased clustering results. Moreover, scaling can help identify outliers, which can have a significant impact on the clustering result. Outliers can distort the clustering result and make it difficult to identify meaningful clusters. Standardization is another reason to scale the variables, as it makes it easier to compare the contributions of different variables to the clustering result. By scaling the variables, we standardize their values, and the clustering algorithm treats them equally, making it easier to identify which variables are most important in forming the clusters.
+
+Therefore, after selecting the most relevant variables and removing the correlated pairs, we proceeded to scale our dataset. Scaling the variables allowed us to standardize the data and avoid any bias in distance measures, making it easier to identify meaningful clusters. Scaling also helped us detect outliers in the data, which could have had a significant impact on the clustering result. In summary, scaling is an essential step before performing clustering analysis, and it ensures that the clustering algorithm treats all variables equally and produces reliable and meaningful clusters.
+
+---
+
+### Hierarchical Clustering
+
+Then the reports provides an overview of hierarchical clustering, which is an unsupervised learning method used to group similar data points into clusters. The procedure involves iteratively merging or dividing clusters based on their similarity, ultimately forming a hierarchical tree-like structure, called a dendrogram. The method is commonly used in data analysis, image segmentation, and information retrieval.
+
+Different linkage criteria, such as complete, single, centroids, and ward linkage, can be used to determine the similarity between clusters. Hierarchical clustering can be visualized using a dendrogram, which displays the hierarchical relationships between clusters. The height of the dendrogram branches indicates the level of dissimilarity between clusters at each merging or dividing step.
+
+The choice of distance metric and linkage criteria can strongly affect the clustering results. In general, it is important to try different distance metrics, such as Euclidean and Manhattan distances, in hierarchical clustering as they can have a significant impact on the resulting clusters. While Euclidean distance measures the straight-line distance between two points in a multi-dimensional space, Manhattan distance measures the distance between two points by summing the absolute differences of their coordinates.
+
+The report also describes the selection procedure and results for the ward method with Euclidean and Manhattan distances. The ward method aims to minimize the sum of squared differences within each cluster and is one of the most popular methods for hierarchical clustering. The results show that the ward method with Euclidean distance resulted in eight clusters being the most appropriate option, with an average silhouette value of 0.19 indicating relatively homogeneous clusters. The Ward method with Manhattan distance, on the other hand, produced six clusters as the most appropriate option, with a higher average silhouette value of 0.21 indicating more homogeneity.
+
+---
+
+###  K-Means Clustering
+
+K-Means clustering is a popular unsupervised machine learning technique used for clustering similar
+data points into groups or clusters based on their similarity or distance from each other. The algorithm
+starts by assigning k centroids (where k is the number of desired clusters) to the data points. The
+algorithm then iteratively assigns each data point to the nearest centroid and re-computes the
+centroid based on the newly assigned data points. The iteration continues until there is no significant
+change in the assignment of data points to clusters or a predefined maximum number of iterations is
+reached.
+
+The algorithm aims to minimize the sum of squared distances between each data point and its
+assigned centroid, which is also known as the within-cluster sum of squares (WSS). To determine the
+optimal number of clusters, one common method is to plot the WSS for different values of k and
+choose the value of k at the "elbow point," where the decrease in WSS starts to level off.
+
+Then it describes a clustering analysis that was performed on a dataset. The analysis began with hierarchical clustering to determine the optimal number of clusters. After examining the within-cluster sum of squares, it was concluded that six clusters would be appropriate. K-Means clustering was then performed with three different values of K (4, 5, and 6) to validate the elbow plot and confirm that the six-cluster model was optimal. Silhouette plots were used to compare the quality of the clustering, with the six-cluster model performing the best. The within-cluster sum of squares and the Adjusted Rand Index were also used to evaluate the quality of the clustering, with the six-cluster model performing the best in both cases. Contingency tables were examined to gain further insights into the distribution of observations among the clusters.
+
+---
+
+### Models Comparison
 
 
 
