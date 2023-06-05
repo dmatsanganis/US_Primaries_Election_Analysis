@@ -263,10 +263,16 @@ Then it describes a clustering analysis that was performed on a dataset. The ana
 
 ### Models Comparison
 
+A comparison was made between K-Means and Hierarchical Clustering using silhouette plots and clusplots. The silhouette plot indicated that Hierarchical Clustering with 4 clusters using the Ward Manhattan method produced more well-defined clusters than K-Means with 7 clusters. However, the clusplots showed that K-Means had distinct clusters with slightly clearer boundaries compared to Hierarchical Clustering.
 
 
+---
 
+### Conclusion - Profiling Clusters
 
+The clusters identified through K-Means with 7 clusters were profiled using economic variables. Mean values of each variable for each cluster were computed and visualized using a parallel coordinate plot. Observations and characteristics of each cluster were discussed, including the presence of outliers in Cluster 5, the "Mid-Range Economic Characteristics Cluster" (Cluster 1), the "High Economic Performance Cluster" (Cluster 2), the "Under Poverty Level Cluster" (Cluster 4), the "Low Income Cluster" (Cluster 6), the "Private nonfarm employment and Hispanic-owned businesses leaders with low diversity" Cluster (Cluster 7), and the "Homeownership and Manufacturing Cluster" (Cluster 3).
+
+Overall, the analysis suggested that K-Means was a better clustering method for this case, as it produced distinct clusters with clearer boundaries and unique clusters for outliers. The economic profiling provided insights into the characteristics and differences among the identified clusters based on economic variables.
 
 
 ---
